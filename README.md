@@ -114,6 +114,33 @@ app.get("/items/:vegetable", (req, res) => {        1
 url
 query
 
+socket.server
+server.on("connection", client => {            2
+    console.log("new connection");
+
+    client.on("disconnect", () => {          3
+      console.log("user disconnected");
+    });
+
+    client.on("message", () => {             4
+      io.emit("message", {
+        content: "Hello"
+      }); 
+      
+      
+      client.on("disconnect", () => {
+  client.broadcast.emit("user disconnected");          1
+  console.log("user disconnected");
+});
+
+client.broadcast.emit emits an event to all sockets except for itself, and client.emit emits an event to all sockets including itself.
+
+
+      
+      in web side:-
+      
+      socket.emit("message")
+      socket.on("")
 
 res
 send()
@@ -466,3 +493,14 @@ apiAuthenticate: (req, res, next) => {                          1
   })(req, res, next);
 }
 ```
+
+Socket.io
+
+```
+const server = app.listen(app.get("port"), () => {
+    console.log(`Server running at http://localhost:
+ ${ app.get("port") }`);
+  }),                                      1
+  io = require("socket.io")(server);       2
+```
+
