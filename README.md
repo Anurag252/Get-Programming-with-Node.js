@@ -503,4 +503,44 @@ const server = app.listen(app.get("port"), () => {
   }),                                      1
   io = require("socket.io")(server);       2
 ```
+use morgan for logging all calls
+To run the built-in debugger, run the node inspect main.js command in your project’s terminal window. After running this command, you’ll immediately see the first lines of your main.js file display in your terminal window. The tool pauses as soon as your application starts, stating Break on start in main.js:1.
+
+
+Listing 36.1. Simple assertion test in test.js
+
+```
+const assert = require("assert");                         1
+
+assert.equal(add(5, 4), 0, "5 plus 4 should equal 9");    2
+
+let add = (x, y) => {                                     3
+  return x + y;
+};
+```
+
+36.2. Testing with mocha and chai
+To start testing your application, install the mocha and chai packages in your recipe-application terminal window by running the command npm i mocha -g and npm i chai -S. mocha is a testing framework. Much like Express.js, mocha offers a structure and methods that can be used in conjunction to test your application code
+
+
+using a test db in case of 
+if (env == test) setup different serfver
+
+also configure a different port for testing
+use chai.request 
+
+```
+describe("/users GET", () => {                          1
+  it("it should GET all the users", (done) => {
+    chai.request(app)                                   2
+      .get("/users")
+      .end((errors, res) => {                           3
+        expect(res).to.have.status(200);                4
+        expect(errors).to.be.equal(null);
+        done();                                         5
+      });
+  });
+});
+
+```
 
