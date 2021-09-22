@@ -543,4 +543,8 @@ describe("/users GET", () => {                          1
 });
 
 ```
+Global objects 👎
 
+__dirname
+
+__filename
