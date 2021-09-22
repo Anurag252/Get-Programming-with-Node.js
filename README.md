@@ -548,3 +548,8 @@ Global objects 👎
 __dirname
 
 __filename
+
+
+![image](https://user-images.githubusercontent.com/4143476/134357990-dd5faae6-4d9b-4b0c-983e-b6d17f92e01d.png)
+
+finished!!
